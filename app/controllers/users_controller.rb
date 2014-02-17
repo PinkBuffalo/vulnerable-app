@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   respond_to :json
 
   def create
-    user = User.create params[:users]
+    params.permit!
+    user = User.create params[:user]
     respond_with user
   end
 
@@ -10,4 +11,5 @@ class UsersController < ApplicationController
     user = User.find params[:id]
     respond_with user
   end
+
 end

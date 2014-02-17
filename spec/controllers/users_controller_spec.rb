@@ -4,7 +4,7 @@ describe UsersController do
   context 'POST#create' do
     it 'should create a user' do
       expect {
-        xhr :post, :create, email: 'foo@bar.com'
+        xhr :post, :create, user: { email: 'foo@bar.com' }
         expect(response).to be_success
       }.to change { User.count }.by(1)
     end
