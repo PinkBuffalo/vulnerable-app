@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe User::StoriesController do
+describe Users::StoriesController do
   let(:user) { build_stubbed :user }
   let(:story) { build_stubbed :story }
   before { User.stub find: user }
@@ -9,7 +9,7 @@ describe User::StoriesController do
 
     it 'displays favorite stories' do
       user.stub stories: [story]
-      get :index, user_id: user.id
+      get :index, user_id: user.id, format: :json
       expect(response).to be_success
     end
   end
