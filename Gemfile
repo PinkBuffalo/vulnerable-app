@@ -8,6 +8,8 @@ gem 'jbuilder', '~> 1.2'
 
 group :development, :test do
   gem 'factory_girl'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :doc do
