@@ -1,4 +1,4 @@
-# Vulerable
+# Vulnerable
 
 In order to run vulnerable backend in your computer, you need to the
 following.
@@ -26,12 +26,10 @@ Verb: __POST__
 Params:
 
 Everything wrapped inside a user object.
-
   - email: String: Necessary
   - name: String: Optional
 
 Example:
-
 ```bash
 curl  -v -H "Accept: application/json" \
       -H "Content-type: application/json" \
@@ -41,7 +39,7 @@ curl  -v -H "Accept: application/json" \
 ```
 
 ### Retrieve user's information
-`/users/:id.json`
+`/users/{:id}.json`
 
 Verb: __GET__
 
@@ -50,7 +48,82 @@ Params:
   - id: integer: Necessary
 
 Example:
-
 ```bash
 curl -v -H "Accept: application/json" http://localhost:3000/users/1.json
+```
+
+## /users/{:id}/stories
+
+### List user's stories
+
+`/users/{:id}/stories.json`
+
+Verb: __GET__
+
+Params:
+  - Id: integer: Id of the user
+
+Example:
+```bash
+curl -v -H "Accept: application/json" \
+     http://localhost:3000/users/1/stories.json
+```
+
+## /users/{:user_id}/favorite_stories
+
+### List user's favorite stories
+`/users/{:user_id}/favorite_stories.json`
+
+Verb: __GET__
+
+Example:
+```bash
+curl -v -H "Accept: application/json" \
+     http://localhost:3000/users/1/favorite_stories.json
+```
+
+### Favorite a story for a user
+
+`/users/{:user_id}/favorite_stories.json`
+
+Verb: __POST__
+
+Example:
+```bash
+curl -v -H "Accept: application/json" \
+      -H "Content-type: application/json" \
+      -X POST \
+      -d '{"id":"23"}' \
+     http://localhost:3000/users/1/favorite_stories.json
+```
+
+### Unfavorite a story for a user
+
+`/users/{:user_id}/favorite_stories.json`
+
+Verb: __DELETE__
+
+Params:
+  - Id: integer: Id of the story
+
+Example:
+```bash
+curl -v -H "Accept: application/json" \
+      -H "Content-type: application/json" \
+      -X DELETE \
+      -d '{"id":"23"}' \
+     http://localhost:3000/users/1/favorite_stories.json
+```
+
+## /timeline.json
+
+### List recent stories
+
+`/timeline.json`
+
+Verb: __GET__
+
+Example:
+```bash
+curl -v -H "Accept: application/json" http://localhost:3000/timeline.json
 ```

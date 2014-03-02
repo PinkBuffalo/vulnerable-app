@@ -1,7 +1,7 @@
 Vulnerable::Application.routes.draw do
   resources :users, only: [:create, :show] do
     scope module: :users do
-      resources :favorite_stories, only: [:index]
+      resources :favorite_stories, only: [:index, :create, :destroy]
       resources :stories, only: [:index, :create]
     end
   end
