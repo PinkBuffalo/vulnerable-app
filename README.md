@@ -14,24 +14,43 @@ following.
 7. bundle exec rails s
 
 
-## Current endpoints
+# Endpoints
 
-`/users`
+## /users
 
-__POST__
-Create a new user
+### Create a new user
+`/users.json`
 
-__Parameters__
+Verb: __POST__
+
+Params:
 
 Everything wrapped inside a user object.
 
-email: String: Necessary
-name: String: Optional
+  - email: String: Necessary
+  - name: String: Optional
 
+Example:
 
-__GET__
-Fetch user
+```bash
+curl  -v -H "Accept: application/json" \
+      -H "Content-type: application/json" \
+      -X POST \
+      -d '{"user":{"name":"Test user","email":"test@email.com"}}' \
+      http://localhost:3000/users.json
+```
 
-__Parameters__
+### Retrieve user's information
+`/users/:id.json`
 
-id: integer: Necessary
+Verb: __GET__
+
+Params:
+
+  - id: integer: Necessary
+
+Example:
+
+```bash
+curl -v -H "Accept: application/json" http://localhost:3000/users/1.json
+```
