@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe User do
-  let(:user) { User.create name: 'mister' }
+  let(:user) { create :user }
+  let(:story) { create :story }
 
   it 'can write stories' do
     expect {
