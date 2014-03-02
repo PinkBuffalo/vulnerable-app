@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/PinkBuffalo/vulnerable-app.png?branch=master)](https://travis-ci.org/PinkBuffalo/vulnerable-app)
+
 # Vulnerable
 
 In order to run vulnerable backend in your computer, you need to the
