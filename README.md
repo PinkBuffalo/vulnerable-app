@@ -2,18 +2,23 @@
 
 # Vulnerable
 
-In order to run vulnerable backend in your computer, you need to the
-following.
+_Assuming you have rbenv or rvm already installed._
 
-1. Install mysql
-2. Install rbenv or rvm
-3. git clone git@github.com:PinkBuffalo/vulnerable-app.git
-4. If your database has different credentials from user root password
-   password, then you need to change accordingly on
-`config/database.yml`
-5. bundle exec rake db:setup
-6. bundle exec rake db:migrate
-7. bundle exec rails s
+
+1. Install postgresql (use homebrew)
+```bash
+brew install postgresql
+initdb /usr/local/var/postgres
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+which psql
+```
+2. git clone git@github.com:PinkBuffalo/vulnerable-app.git
+3. Setup your db and start the db server.
+  3.1 copy config/database.yml.example to config/database.yml
+  3.2 Adjust config/database.yml with your settings.
+4. bundle exec rake db:setup
+5. bundle exec rake db:migrate
+6. bundle exec rails s
 
 
 # Endpoints
