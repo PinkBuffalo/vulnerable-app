@@ -23,10 +23,10 @@ which psql
 
 # Endpoints
 
-## /users
+## api/v1/users
 
 ### Create a new user
-`/users.json`
+`api/v1/users`
 
 Verb: __POST__
 
@@ -42,11 +42,11 @@ curl  -v -H "Accept: application/json" \
       -H "Content-type: application/json" \
       -X POST \
       -d '{"user":{"name":"Test user","email":"test@email.com"}}' \
-      http://localhost:3000/users.json
+      http://localhost:3000/api/v1/users
 ```
 
 ### Retrieve user's information
-`/users/{:id}.json`
+`api/v1/users/{:id}`
 
 Verb: __GET__
 
@@ -56,14 +56,14 @@ Params:
 
 Example:
 ```bash
-curl -v -H "Accept: application/json" http://localhost:3000/users/1.json
+curl -v -H "Accept: application/json" http://localhost:3000/api/v1/users/1
 ```
 
-## /users/{:id}/stories
+## api/v1/users/{:id}/stories
 
 ### List user's stories
 
-`/users/{:id}/stories.json`
+`api/v1/users/{:id}/stories`
 
 Verb: __GET__
 
@@ -73,25 +73,25 @@ Params:
 Example:
 ```bash
 curl -v -H "Accept: application/json" \
-     http://localhost:3000/users/1/stories.json
+     http://localhost:3000/api/v1/users/1/stories
 ```
 
-## /users/{:user_id}/favorite_stories
+## api/v1/users/{:user_id}/favorite_stories
 
 ### List user's favorite stories
-`/users/{:user_id}/favorite_stories.json`
+`api/v1/users/{:user_id}/favorite_stories`
 
 Verb: __GET__
 
 Example:
 ```bash
 curl -v -H "Accept: application/json" \
-     http://localhost:3000/users/1/favorite_stories.json
+     http://localhost:3000/api/v1/users/1/favorite_stories
 ```
 
 ### Favorite a story for a user
 
-`/users/{:user_id}/favorite_stories.json`
+`api/v1/users/{:user_id}/favorite_stories`
 
 Verb: __POST__
 
@@ -101,12 +101,12 @@ curl -v -H "Accept: application/json" \
       -H "Content-type: application/json" \
       -X POST \
       -d '{"id":"23"}' \
-     http://localhost:3000/users/1/favorite_stories.json
+     http://localhost:3000/api/v1/users/1/favorite_stories
 ```
 
 ### Unfavorite a story for a user
 
-`/users/{:user_id}/favorite_stories.json`
+`api/v1/users/{:user_id}/favorite_stories`
 
 Verb: __DELETE__
 
@@ -119,18 +119,18 @@ curl -v -H "Accept: application/json" \
       -H "Content-type: application/json" \
       -X DELETE \
       -d '{"id":"23"}' \
-     http://localhost:3000/users/1/favorite_stories.json
+     http://localhost:3000/api/v1/users/1/favorite_stories
 ```
 
-## /timeline.json
+## api/v1/timeline
 
 ### List recent stories
 
-`/timeline.json`
+`api/v1/timeline`
 
 Verb: __GET__
 
 Example:
 ```bash
-curl -v -H "Accept: application/json" http://localhost:3000/timeline.json
+curl -v -H "Accept: application/json" http://localhost:3000/api/v1/timeline
 ```
