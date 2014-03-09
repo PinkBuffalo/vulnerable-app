@@ -7,7 +7,9 @@ Vulnerable::Application.routes.draw do
       end
     end
 
-    match '/users', via: :options, to: 'stories#index'
+    resources :stories, only: :index
+
     get 'timeline', to: 'stories#index'
+    match '/users', via: :options, to: 'stories#index'
   end
 end

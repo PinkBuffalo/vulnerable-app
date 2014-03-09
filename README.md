@@ -18,7 +18,8 @@ which psql
   3.2 Adjust config/database.yml with your settings.
 4. bundle exec rake db:setup
 5. bundle exec rake db:migrate
-6. bundle exec rails s
+6. bundle exec rake db:seed # To create some stories
+7. bundle exec rails s
 
 
 # Endpoints
