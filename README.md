@@ -12,14 +12,14 @@ initdb /usr/local/var/postgres
 pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 which psql
 ```
-2. git clone git@github.com:PinkBuffalo/vulnerable-app.git
+2. `git clone git@github.com:PinkBuffalo/vulnerable-app.git`
 3. Setup your db and start the db server.
-  3.1 copy config/database.yml.example to config/database.yml
-  3.2 Adjust config/database.yml with your settings.
-4. bundle exec rake db:setup
-5. bundle exec rake db:migrate
-6. bundle exec rake db:seed # To create some stories
-7. bundle exec rails s
+  3.1 copy `config/database.yml.example` to `config/database.yml`
+  3.2 Adjust `config/database.yml` with your settings.
+4. `bundle exec rake db:setup`
+5. `bundle exec rake db:migrate`
+6. `bundle exec rake db:seed` # To create some stories
+7. `bundle exec rails s`
 
 
 # Endpoints
