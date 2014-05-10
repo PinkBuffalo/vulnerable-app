@@ -17,7 +17,11 @@ ActiveRecord::Schema.define(version: 20140217055820) do
   enable_extension "plpgsql"
 
   create_table "stories", force: true do |t|
+    t.string   "author"
+    t.string   "title"
     t.text     "body"
+    t.string   "mood"
+    t.string   "status"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,6 +32,8 @@ ActiveRecord::Schema.define(version: 20140217055820) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "password"
+    t.integer  "passcode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
